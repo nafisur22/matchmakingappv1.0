@@ -4,6 +4,13 @@
                 // Prevent default link behavior
                 e.preventDefault();
                 
+                // --- NEW CLASS SWITCHING LOGIC ---
+                // 1. Remove 'active' from whoever has it now
+                document.querySelector('.active')?.classList.remove('active');
+                // 2. Add 'active' to the link that was just clicked
+                this.classList.add('active');
+                // ---------------------------------
+
                 // Get the target section ID from the href attribute
                 const targetId = this.getAttribute('href');
                 
