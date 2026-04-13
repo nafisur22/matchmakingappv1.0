@@ -56,7 +56,7 @@ body {
 section{
             max-width: 100rem;
             border: 2px solid red;
-            padding: 80px 0;
+            padding: 80px 0px;
 }
 
 header {
@@ -186,7 +186,7 @@ img {
         }
 
         .hero-content > div{
-            margin: 0 auto;
+            margin: auto;
         }
 
         .hero-buttons{
@@ -421,9 +421,11 @@ footer {
             .hero{
                 height: 150vh;
             }
+            
             section .container{
                 width: 100%;
             }
+
             .hero-content {
                 display: grid;
             }
@@ -455,11 +457,11 @@ footer {
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             
             section {
@@ -469,15 +471,13 @@ footer {
         
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 5rem;
             }
             
-            .btn {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-                padding: 10px;
+            .hero p {
+                font-size: 1.8rem;
             }
+
         }
 
         /* @media(max-width: 768px){
