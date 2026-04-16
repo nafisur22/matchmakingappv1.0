@@ -386,17 +386,18 @@ img {
 
 /* ------- CAROUSEL ------- */
 
-.carousel{
-    width: 100%;
-    overflow-x: auto;
-    margin: 3em auto;
-    display: flex;
-    gap: 1em;
-    scroll-behavior: smooth;
-    anchor-name: --carousel;
-    scroll-snap-type: x mandatory;
-    scroll-marker-group: after;
-}
+        .carousel{
+            width: 100%;
+            overflow-x: auto;
+            margin: 3em auto;
+            display: flex;
+            gap: 1em;
+            scroll-behavior: smooth;
+            anchor-name: --carousel;
+            scroll-snap-type: x mandatory;
+            scroll-marker-group: after;
+            scroll-padding: 0 calc(50% - 10em);
+        }
 
 .carousel::scroll-marker-group{
     display: flex;
@@ -730,14 +731,15 @@ footer {
     .carousel {
         margin: 2em 0;
         gap: 0.8em;
+        scroll-padding: 0 2.5%;
     }
     
     .img-card {
-        flex: 0 0 85%;
-        min-width: 85%;
-        max-width: 85%;
-        min-height: 200px;
-        max-height: 200px;
+        flex: 0 0 95%;
+        min-width: 95%;
+        max-width: 95%;
+        min-height: 280px;
+        max-height: 280px;
     }
     
     /* Footer */
@@ -892,6 +894,10 @@ footer {
     
     .about-text {
         margin-bottom: 30px;
+    }
+    
+    .carousel {
+        scroll-padding: 0 27.5%;
     }
     
     .img-card {
