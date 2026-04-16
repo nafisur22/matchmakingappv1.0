@@ -168,11 +168,12 @@ img {
 
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: auto;
             width: 100%;
-            padding: 100px 0 60px;
+            padding: 2rem 1rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             background: #F8BD9C;
             color: white;
             text-align: center;
@@ -182,16 +183,19 @@ img {
             display: flex;
             max-width: 100%;
             margin: 0 auto;
-            /* border: solid black; */
+            align-items: center;
+            gap: 0.8rem;
+            flex-direction: column;
+            /* Mobile-first: single column layout */
         }
 
-        .hero-content > div{
-            margin: auto;
+        .hero-content > div {
+            text-align: center;
         }
 
         .hero-buttons{
             width: 40em;
-            margin-top: 40px;
+            margin-top: 0px;
             display: flex;
             justify-content: space-evenly;
             text-shadow: 1px 1px;
@@ -205,19 +209,21 @@ img {
         
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             animation: fadeInDown 1s ease;
         }
         
         .hero p {
             font-size: 1.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
             opacity: 0.9;
             animation: fadeInUp 1s ease 0.2s forwards;
         }
 
         div img{
             max-width: 400px;
+            max-height: 300px;
+            object-fit: contain;
             padding: 0;
             margin: 0;
         }
@@ -248,6 +254,11 @@ img {
             z-index: 2;
             box-shadow: 3px 3px rgb(219, 218, 218);
             border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
         }
 
         .app-download:hover{
@@ -297,11 +308,12 @@ img {
         } */
         
         .app{
-            width: 20px !important;
-            height: 30px !important;
-            max-width: 20px;
-            max-height: 30px;
+            width: 18px !important;
+            height: 18px !important;
+            max-width: 18px;
+            max-height: 18px;
             object-fit: contain;
+            display: block;
         }
 
         #android{
@@ -535,6 +547,48 @@ footer {
   margin: 0;
 }
 
+/* Desktop & Tablet (≥ 768px) - Grid Layout */
+@media (min-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+    }
+    
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-title {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .hero-subtitle {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .hero-buttons-container {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .hero-content > div {
+        text-align: center;
+    }
+}
+
 /* ------- RESPONSIVE MEDIA QUERIES ------- */
 
 /* Extra Small Devices (phones, less than 576px) */
@@ -578,31 +632,30 @@ footer {
     /* Hero Section */
     .hero {
         height: auto;
-        min-height: 100vh;
-        padding: 100px 0 60px;
+        min-height: 70vh;
+        padding: 2rem 1rem;
     }
     
     .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
         padding: 0 10px;
+        gap: 1rem;
     }
     
     .hero h1 {
         font-size: 2rem;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     
     .hero p {
         font-size: 1rem;
-        margin-bottom: 25px;
+        margin-bottom: 0;
     }
     
     .hero-buttons {
         width: 100%;
         flex-direction: column;
         align-items: center;
-        margin-top: 30px;
+        margin-top: 5px;
     }
     
     .app-download {
@@ -617,22 +670,18 @@ footer {
     }
     
     .app-download h5 {
-        font-size: 16px;
+        font-size: 14px;
         margin: 0;
-        line-height: 55px;
-        vertical-align: middle;
+        line-height: 1;
     }
     
     .app {
-        width: 20px !important;
-        height: 30px !important;
-        max-width: 20px;
-        max-height: 30px;
+        width: 18px !important;
+        height: 18px !important;
+        max-width: 18px;
+        max-height: 18px;
         object-fit: contain;
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: 20px;
-        padding-top: 5px;
+        display: block;
     }
     
     /* Disable hover effects on mobile */
@@ -656,7 +705,7 @@ footer {
     
     .hero-content > div img {
         max-width: 280px;
-        margin-bottom: 30px;
+        margin-bottom: 2px;
     }
     
     /* About Section */
@@ -762,26 +811,29 @@ footer {
     /* Hero Section */
     .hero {
         height: auto;
-        min-height: 100vh;
-        padding: 80px 0;
+        min-height: 70vh;
+        padding: 1.8rem 0.8rem;
     }
     
     .hero-content {
-        flex-direction: column-reverse;
         text-align: center;
+        gap: 1rem;
     }
     
     .hero h1 {
         font-size: 2.5rem;
+        margin-bottom: 15px;
     }
     
     .hero p {
         font-size: 1.2rem;
+        margin-bottom: 2px;
     }
     
     .hero-buttons {
         width: 100%;
         justify-content: center;
+        margin-top: 5px;
     }
     
     .app-download {
@@ -794,21 +846,18 @@ footer {
     }
     
     .app-download h5 {
-        font-size: 16px;
+        font-size: 14px;
         margin: 0;
-        line-height: 55px;
-        vertical-align: middle;
+        line-height: 1;
     }
     
     .app {
-        width: 20px !important;
-        height: 30px !important;
-        max-width: 20px;
-        max-height: 30px;
+        width: 18px !important;
+        height: 18px !important;
+        max-width: 18px;
+        max-height: 18px;
         object-fit: contain;
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: -3px;
+        display: block;
     }
     
     /* Disable hover effects on small devices */
@@ -832,7 +881,7 @@ footer {
     
     .hero-content > div img {
         max-width: 350px;
-        margin-bottom: 30px;
+        margin-bottom: 2px;
     }
     
     /* About Section */
@@ -868,6 +917,12 @@ footer {
 
 /* Medium Devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    /* Container - Full width for tablets to eliminate white space */
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+    
     /* Header & Navigation */
     .logo img {
         width: 200px;
@@ -885,7 +940,7 @@ footer {
     .hero {
         height: auto;
         min-height: 100vh;
-        padding: 60px 0;
+        padding: 0 0 0px;
     }
     
     .hero h1 {
@@ -912,19 +967,16 @@ footer {
     .app-download h5 {
         font-size: 16px;
         margin: 0;
-        line-height: 55px;
-        vertical-align: middle;
+        line-height: 1;
     }
     
     .app {
-        width: 20px !important;
-        height: 30px !important;
-        max-width: 20px;
-        max-height: 30px;
+        width: 18px !important;
+        height: 18px !important;
+        max-width: 18px;
+        max-height: 18px;
         object-fit: contain;
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: -3px;
+        display: block;
     }
     
     /* Disable hover effects on tablets */
